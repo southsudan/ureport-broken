@@ -69,10 +69,10 @@ LANGUAGES = (
 DATABASES = {
     'default': {
         'ENGINE' : 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ureport',
-        'HOST': 'localhost',
-        'USER': 'ureport',
-        'PASSWORD':'$Ss2013S$',
+        'NAME': '',
+        'HOST': '',
+        'USER': '',
+        'PASSWORD':'',
     }
 }
 SECRET_KEY = '$00k!l^c1_&^iuno3-te(n9f1zzxp6knu-7bo)!!=(uo9o1kjm'
@@ -99,8 +99,8 @@ INSTALLED_BACKENDS = {
            "sendsms_url": "http://127.0.0.1:13013/cgi-bin/sendsms",
            "sendsms_params": {"smsc": "Agregator1",
                               "from": "6262",
-                              "username": "ureport",
-                              "password": "$Ss2013S$",
+                              "username": "",
+                              "password": "",
                               "coding": 0,
                               "charset": "ascii",
                               }
