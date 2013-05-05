@@ -44,9 +44,9 @@ CELERYBEAT_SCHEDULER = "djcelery.schedulers.DatabaseScheduler"
 
 BROKER_HOST = "localhost"
 BROKER_PORT = 5672
-BROKER_USER = "ureport"
-BROKER_PASSWORD = "$Ss2013S$"
-BROKER_VHOST = "ureport"
+BROKER_USER = ""
+BROKER_PASSWORD = ""
+BROKER_VHOST = ""
 
 
 
