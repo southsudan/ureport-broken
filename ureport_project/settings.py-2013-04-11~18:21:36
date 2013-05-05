@@ -91,30 +91,10 @@ INSTALLED_BACKENDS = {
         "ENGINE": "rapidsms.backends.bucket",
     },
 
-    "Agregator1": {
-     
-           "ENGINE": "rapidsms.backends.kannel",
-           "host": "127.0.0.1",
-           "port": 8000,
-           "sendsms_url": "http://127.0.0.1:13013/cgi-bin/sendsms",
-           "sendsms_params": {"smsc": "Agregator1",
-                              "from": "6262",
-                              "username": "ureport",
-                              "password": "$Ss2013S$",
-                              "coding": 0,
-                              "charset": "ascii",
-                              }
-            },
-     
-    "message_tester": {
-            "ENGINE": "rapidsms.backends.bucket",
-    }
-     
+   
 }
 
-ROUTER_URL = "http://localhost:13013/cgi-bin/sendsms?from=6262&username=ureport&password=$Ss2013S$&text=%(text)s&to=%(recipient)s&smsc=%(backend)s"
-
-CELERYBEAT_SCHEDULER = "djcelery.schedulers.DatabaseScheduler"
+#ROUTER_URL = "http://ureport-southsudan.com/send?backend=%(backend)s&recipient=%(recipient)s&text=%(text)s"
 
 # to help you get started quickly, many django/rapidsms apps are enabled
 # by default. you may wish to remove some and/or add your own.
@@ -142,7 +122,6 @@ INSTALLED_APPS = [
     "rapidsms.contrib.locations.nested",
     "geoserver",
     "rapidsms.contrib.messaging",
-    "rapidsms.contrib.messagelog",
     "rapidsms.contrib.registration",
     "eav",
     "auth",
@@ -164,10 +143,7 @@ INSTALLED_APPS = [
     #"permission",
    # nothing after south
     "south",
-    "tastypie",
 ]
-
-RAPIDSMS_ROUTER = "rapidsms.router.db.databaseRouter"
 
 SMS_APPS = [
     "monitor",
@@ -205,8 +181,7 @@ GEOSERVER_URL = True
 # debug mode is turned on as default, since rapidsms is under heavy
 # development at the moment, and full stack traces are very useful
 # when reporting bugs. don't forget to turn this off in production.
-DEBUG = True
-TEMPLATE_DEBUG = True
+DEBUG = TEMPLATE_DEBUG = True
 
 # after login (which is handled by django.contrib.auth), redirect to the
 # dashboard rather than 'accounts/profile' (the default).
@@ -249,7 +224,7 @@ TEMPLATE_CONTEXT_PROCESSORS = [
 ]
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.cache.UpdateCacheMiddleware',
+     'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -286,7 +261,6 @@ TEMPLATE_LOADERS = (
 )
 
 # the project-level url patterns
-
 ROOT_URLCONF = "urls"
 
 #caching stuff
@@ -327,11 +301,6 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 SHOW_CONTACT_INFO = False
 
-USE_NEW_START_POLL = False
-ADMIN_UNREGISTER = False
-
-
-
 # since we might hit the database from any thread during testing, the
 # in-memory sqlite database isn't sufficient. it spawns a separate
 # virtual database for each thread, and syncdb is only called for the
@@ -350,5 +319,5 @@ try:
         from localsettings import *
 except ImportError:
     pass
-#if 'test' in sys.argv:
- #   DATABASES['default'] = {'ENGINE': 'django.db.backends.sqlite3'}
+if 'test' in sys.argv:
+    DATABASES['default'] = {'ENGINE': 'django.db.backends.sqlite3'}

@@ -39,12 +39,13 @@ CELERY_QUEUES = {
 CELERY_DEFAULT_EXCHANGE = 'tasks'
 CELERY_DEFAULT_EXCHANGE_TYPE = 'topic'
 CELERY_DEFAULT_ROUTING_KEY = 'task.default'
-#CELERYBEAT_SCHEDULER = "djcelery.schedulers.DatabaseScheduler"
 
-BROKER_HOST = "127.0.0.1"
+CELERYBEAT_SCHEDULER = "djcelery.schedulers.DatabaseScheduler"
+
+BROKER_HOST = "localhost"
 BROKER_PORT = 5672
 BROKER_USER = "ureport"
-BROKER_PASSWORD = "ureport"
+BROKER_PASSWORD = "$Ss2013S$"
 BROKER_VHOST = "ureport"
 
 

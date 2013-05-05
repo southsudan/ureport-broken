@@ -114,7 +114,7 @@ INSTALLED_BACKENDS = {
 
 ROUTER_URL = "http://localhost:13013/cgi-bin/sendsms?from=6262&username=ureport&password=$Ss2013S$&text=%(text)s&to=%(recipient)s&smsc=%(backend)s"
 
-CELERYBEAT_SCHEDULER = "djcelery.schedulers.DatabaseScheduler"
+
 
 # to help you get started quickly, many django/rapidsms apps are enabled
 # by default. you may wish to remove some and/or add your own.
@@ -164,7 +164,6 @@ INSTALLED_APPS = [
     #"permission",
    # nothing after south
     "south",
-    "tastypie",
 ]
 
 RAPIDSMS_ROUTER = "rapidsms.router.db.databaseRouter"
@@ -286,7 +285,6 @@ TEMPLATE_LOADERS = (
 )
 
 # the project-level url patterns
-
 ROOT_URLCONF = "urls"
 
 #caching stuff
