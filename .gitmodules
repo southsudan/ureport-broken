@@ -53,4 +53,4 @@
 
 [submodule "ureport_project/django_taggit"]
 	path = ureport_project/django_taggit
-	url = https://github.com/alex/django-taggit.git
+	url = https://github.com/alex/django-taggit.git.
