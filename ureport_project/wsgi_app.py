@@ -9,6 +9,7 @@ sys.path.append(os.path.join(filedir))
 os.environ["CELERY_LOADER"] = "django"
 os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 import sys
+
 print sys.path
 
 from django.core.handlers.wsgi import WSGIHandler
