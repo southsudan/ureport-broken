@@ -1,4 +1,4 @@
-* * * * * root /home/ureport/env/bin/python /home/ureport/env/src/ureport/ureport_project/manage.py check_script_progress -e 7 -l 20
+* * * * * /home/ureport/env/bin/python /home/ureport/env/src/ureport/ureport_project/manage.py check_script_progress -e 7 -l 20
 01 21 * * * /home/ureport/env/bin/python /home/ureport/env/src/ureport/ureport_project/manage.py export_contacts
 7 * * * * /home/ureport/env/bin/python /home/ureport/env/src/ureport/ureport_project/manage.py export_poll_data
 
