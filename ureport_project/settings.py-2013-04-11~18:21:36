@@ -69,10 +69,10 @@ LANGUAGES = (
 DATABASES = {
     'default': {
         'ENGINE' : 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ureport',
+        'NAME': '',
         'HOST': 'localhost',
-        'USER': 'ureport',
-        'PASSWORD':'$Ss2013S$',
+        'USER': '',
+        'PASSWORD':'',
     }
 }
 SECRET_KEY = '$00k!l^c1_&^iuno3-te(n9f1zzxp6knu-7bo)!!=(uo9o1kjm'
